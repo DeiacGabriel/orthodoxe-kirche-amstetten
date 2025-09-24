@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./_public_html/scripts/public.css">
+    <link rel="stylesheet" href="./_public_html/scripts/aboutus.css">
+
     <title>Document</title>
 </head>
 <body>
@@ -36,9 +38,64 @@
         </nav>
     </header>
 
-    <script>var x = 1;
+    <main>
+        <section class="hero-section">
+            <img class="hero-emblem" src="./_public_html/uploads/logo48.png" />
+            <div class="hero-container">
+                <div class="headlines">
+                    <h1>Orthodoxe Kirche</h1>
+                    <h1>Amstetten</h1>
+                </div>
+            </div>
+        </section>
+        
+        <div class="separator"></div>
 
-function changeMenu(event) {
+        <section class="members-section">
+            <h2>Unsere Pfarre</h2>
+            <div class="members-container">
+                <div class="member-card">
+                    <div class="member-image">
+                        <img src="./uploads/person1.jpg" alt="Person 1" />
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Valentin Miloiu</h3>
+                        <p class="member-role">Pfarrer</p>
+                        <p class="member-description">
+                            Beschreibung der Aufgaben und Verantwortlichkeiten...
+                        </p>
+                        <div class="member-contact">
+                            <p>📧 email@beispiel.at</p>
+                            <p>📞 +43 123 456 789</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-image">
+                        <img src="./uploads/person1.jpg" alt="Person 1" />
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Name der Person</h3>
+                        <p class="member-role">Position/Rolle</p>
+                        <p class="member-description">
+                            Beschreibung der Aufgaben und Verantwortlichkeiten...
+                        </p>
+                        <div class="member-contact">
+                            <p>📧 email@beispiel.at</p>
+                            <p>📞 +43 123 456 789</p>
+                        </div>
+                    </div>                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <script>
+    var x = 1;
+
+    function changeMenu(event) {
     if (event) {
         event.stopPropagation();
     }
@@ -62,11 +119,11 @@ function changeMenu(event) {
     }
 }
 
-document.getElementById("open-menu").addEventListener("click", function () {
-    if (x == 0) {
-        changeMenu();
-    }
-});
+    document.getElementById("open-menu").addEventListener("click", function () {
+        if (x == 0) {
+            changeMenu();
+        }
+    });
     </script>
 </body>
 </html>
