@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="header-img-group">
+                    <img src="./_public_html/uploads/logo48.png"/>
+                    <div>Orthodoxe Kirche Amstetten</div>
+                </div>
+                <div class="big-nav">
+                    <a class="text2 nav-item" href="./index.html">Home</a>
+                    <a class="text2 nav-item" href="">Über uns</a>
+                    <a class="text2 nav-item" href="">Kalender</a>
+                    <a class="text2 nav-item" href="">Events</a>
+                    <a class="text2 nav-item" href="">Bilder</a>
+                    <a target="_blank" class="text2 nav-item" href="https://www.facebook.com/bisericaortodoxaamstetten/?locale=de_DE/">Facebook</a>
+                </div>
+                <img id="menu" src="./uploads/menu.svg" onclick="changeMenu(event)"/>
+            </div>
+            <div id="open-menu" class="open-menu hide" onclick="changeMenu(event)">
+                <img id="close" class="hide close" src="./_public_html/uploads/menu-button.png" onclick="changeMenu(event)"/>
+
+                <a class="text2 primary-item" href="./Index.html">Home</a>                
+                <a class="text2 primary-item" href="">Über uns</a>                
+                <a class="text2 primary-item" href="">Kalender</a>                
+                <a class="text2 primary-item" href=""></a>                
+                <a target="_blank" class="text2 primary-item" href="https://m.facebook.com/feuerwehrgreinsfurth/">Facebook</a>
+            </div>
+        </nav>
+    </header>
+
+    <script>var x = 1;
+
+function changeMenu(event) {
+    if (event) {
+        event.stopPropagation();
+    }
+
+    if (x == 1) {
+        document.getElementById("close").style.display = "block";
+        document.getElementById("open-menu").style.display = "flex";
+        document.getElementById("menu").style.display = "none";
+        x = 0;
+        console.log("opened menu");
+    } else {
+        
+        if(window.innerWidth > 1000)
+            document.getElementById("menu").style.display = "none";
+        else
+            document.getElementById("menu").style.display = "block";
+        document.getElementById("close").style.display = "none";
+        document.getElementById("open-menu").style.display = "none";
+        x = 1;
+        console.log("closed menu");
+    }
+}
+
+document.getElementById("open-menu").addEventListener("click", function () {
+    if (x == 0) {
+        changeMenu();
+    }
+});
+    </script>
+</body>
+</html>
