@@ -78,13 +78,13 @@ body {
     background-color: var(--sec-color);
 }
 :root{
-    --highlight: #D97706;
-    --pri-color: #1F2937;
-    --sec-color: #FEF3C7;
-    --ter-color: #F59E0B;
+    --highlight: #8A817C;
+    --pri-color: #463F3A;
+    --sec-color: #F4F3EE;
+    --ter-color: #1F2937;
     --qua-color: #1F2937;
-    --nav-color: #F59E0B;
-    --button-color: #D97706;
+    --nav-color: #BCB8B1;
+    --button-color: #8A817C; 
 }
 h1 {
     white-space: normal;
@@ -148,7 +148,7 @@ h1, h2, h3, .text, img{
     width: 100%;
     background-color: var(--ter-color);
     border-radius: 1px;
-    margin: 60px 0;
+    margin: 50px 0;
 }
 .headline-container{
     margin-bottom: 50px;
@@ -235,6 +235,7 @@ nav .nav-item:hover{
     cursor: pointer;
     color: var(--highlight);
 }
+
 .close{
     position: fixed;
     top: 20px;
@@ -324,13 +325,19 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 100px;
-    padding-bottom: 50px;
+    padding-top: 50px;
 }
+/*
 .hero-section img{
     width: 30%;
     height: auto;
     max-width: 150px;
+}
+    */
+    .hero-image img{
+    width: 100%;
+    height: auto;
+    max-width: 120px;
 }
 .hero-section .headlines{
     margin: 15px 0;
@@ -346,6 +353,7 @@ main{
 .hero-section .cta-btns a{
     margin: 5px;
 }
+
 
 
 footer{
@@ -405,14 +413,14 @@ footer .marg-btm:hover{
         animation-range: entry 0% cover 30%;
     }
     .separator{
-        margin: 80px 0;
+        margin: 50px 0;
     }
     .hero-section{
-        flex-direction: row;
-        justify-content: flex-start;
-        padding-top: 140px;
-        padding-bottom: 60px;
-    }
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 60px;              /* 60px Abstand zwischen Text und Bild */
+    padding-top: 100px;
+}
     .hero-section .hero-container{
         margin-left: 75px;
     }
