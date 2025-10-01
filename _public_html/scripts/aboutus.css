@@ -4,7 +4,6 @@
 }
 
 .members-section h2 {
-    text-align: center;
     margin-bottom: 40px;
     font-size: 2em;
     color: var(--pri-color);
@@ -38,6 +37,66 @@
     object-fit: cover;
     border: 4px solid var(--ter-color);
 }
+
+.history-section {
+    padding: 40px 0;
+    margin: 40px 0;
+}
+
+.history-section h2{
+    margin-bottom: 40px;
+    font-size: 2em;
+    color: var(--pri-color);
+}
+
+
+.maps-section{
+    padding: 40px 0;
+    margin: 40px 0;
+}
+
+.maps-section h2{
+    margin-bottom: 40px;
+    font-size: 2em;
+    color: var(--pri-color);
+}
+
+
+.location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.location iframe {
+    width: 70%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    
+}
+
+.maps-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 15px 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin: 20px auto;
+    text-decoration: none;
+    color: var(--pri-color);
+    transition: all 0.3s ease;    
+}
+
+.maps-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
 @media (min-width: 1000px) {
     .members-container {
         flex-direction: row;  
@@ -48,5 +107,10 @@
     .member-card {
         flex: 1; 
         max-width: 45%;
+    }
+    
+    .location iframe {
+        width: 70%;
+        height: 400px;
     }
 }

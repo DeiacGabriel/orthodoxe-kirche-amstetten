@@ -144,11 +144,27 @@ h1, h2, h3, .text, img{
 
 
 .separator{
-    height: 2px;
-    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    margin: 50px auto;
+    position: relative;
     background-color: var(--ter-color);
-    border-radius: 1px;
-    margin: 60px 0;
+    width: 50%;
+    max-width: 500px;
+    overflow: visible;
+}
+.separator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 6px;
+    background: linear-gradient(90deg, transparent, var(--highlight), transparent);
+    border-radius: 3px;
+    z-index: 1;
+    pointer-events: none;
 }
 .headline-container{
     margin-bottom: 50px;
@@ -173,23 +189,7 @@ h3{
 .text2{
     line-height: 1.5;
 }
-.pri-cta-btn{
-    width: 160px;
-    height: 40px;
-    background-color: var(--button-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.25em;
-    color: var(--sec-color);
-}
-.pri-cta-btn:hover{
-    border: 2px solid var(--button-color);
-    color: var(--button-color);
-    background: none;
-    cursor: pointer;
-    transition: background 0.3s ease, color 0.3s ease;
-}
+
 .sec-cta-btn{
     width: 160px;
     height: 40px;
@@ -241,7 +241,6 @@ nav .nav-item:hover{
     top: 20px;
     right: 20px;
     z-index: 10;
-    filter: brightness(0);
 }
 
 .open-menu{
@@ -302,9 +301,6 @@ header nav .nav-container{
 header nav img{
     width: 25px;
     height: auto;
-}
-header #menu{
-    filter: brightness(0);
 }
 
 
@@ -413,9 +409,7 @@ footer .marg-btm:hover{
         animation-timeline: view();
         animation-range: entry 0% cover 30%;
     }
-    .separator{
-        margin: 80px 0;
-    }
+    
     .hero-section{
     flex-direction: row;
     justify-content: flex-start;
