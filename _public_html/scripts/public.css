@@ -84,6 +84,7 @@ body {
     --ter-color: #1F2937;
     --qua-color: #1F2937;
     --nav-color: transparent;
+    --nav-color: transparent;
     --button-color: #8A817C; 
 }
 h1 {
@@ -142,13 +143,32 @@ h1, h2, h3, .text, img{
     animation-range: entry 0% cover 30%;
 }
 
-
 .separator{
     height: 3px;
     border-radius: 2px;
     margin: 50px auto;
     position: relative;
+    height: 3px;
+    border-radius: 2px;
+    margin: 50px auto;
+    position: relative;
     background-color: var(--ter-color);
+    width: 50%;
+    max-width: 500px;
+    overflow: visible;
+}
+.separator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 6px;
+    background: linear-gradient(90deg, transparent, var(--highlight), transparent);
+    border-radius: 3px;
+    z-index: 1;
+    pointer-events: none;
     width: 50%;
     max-width: 500px;
     overflow: visible;
@@ -321,8 +341,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 100px;
-    padding-bottom: 50px;
+    padding-top: 50px;
 }
 /*
 .hero-section img{
@@ -355,7 +374,7 @@ main{
 
 footer{
     background-color: var(--qua-color);
-    padding-top: 200px;
+    padding-top: 50px;
 }
 .footer-headline img{
     width: 15%;

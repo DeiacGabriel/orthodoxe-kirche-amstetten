@@ -45,6 +45,45 @@
         </nav>
     </header>
     <main>
+        <!-- Hero-Sektion -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-text-content">
+                        <h1 id="hero-title">Orthodoxen Kirche Amstetten</h1>
+                        <p id="hero-description">Willkommen auf der Offiziellen Website der Orthodoxen Kirche Amstetten.</p>
+                    </div>
+                    <img id="hero-image" src="./uploads/wappen.png" alt="Kirchenbild"/>
+                </div>
+            </div>
+        </section>
+        <div class="separator"></div>
+        <!--Über uns Sektion -->
+        <section class="normal-section">
+            <div class="normal-content">
+                <h2>Über uns</h2>
+                <p>Die Orthodoxe Kirche Amstetten ist eine lebendige Gemeinschaft von Gläubigen, die sich dem Glauben und der Tradition der Orthodoxen Kirche verpflichtet fühlt.</p>
+                <a href="./AboutUs.html">Mehr erfahren</a>
+            </div>
+        </section>
+        <div class="separator"></div>
+        <!--Gottesdienste Sektion -->
+        <section class="normal-section">
+            <div class="normal-content">
+                <h2>Events</h2>
+                <p>Die Orthodoxe Kirche Amstetten bietet regelmäßige Veranstaltungen/Gottesdienste an, zu denen alle Gläubigen herzlich eingeladen sind.</p>
+                <a href="./Services.html">Events</a>
+            </div>
+        </section>
+        <div class="separator"></div>
+        <!--Gottesdienste Sektion -->
+        <section class="normal-section">
+            <div class="normal-content">
+                <h2>Galerie</h2>
+                <p>In unserer Galerie finden Sie eine Auswahl an Bildern und Eindrücken aus dem Leben der Orthodoxen Kirche Amstetten.</p>
+                <a href="./Gallery.html">Mehr Bilder</a>
+            </div>
+        </section>
     </main>
     <footer>
         <div class="footer-headline">
@@ -55,123 +94,26 @@
         <div class="links">
             <a class="marg-btm" href="./AboutUs.html#contact">Kontakt</a>
             <a class="marg-btm" href="./uploads/Impressum2025.docx" download="Impressum2025.docx">Haftungsausschluss herunterladen</a>
-
             <div>
                 <div class="footer-text">
                     Für den Inhalt verantwortlich:<br>
                     Orthodoxe Kirche Amstetten<br>
-                    Abschnitt- Amstetten/Stadt<br>
                     Pfarrer: Valentin Miloiu<br><br>
                     Anschrift:<br>
-                    Straße: Waidhofner Straße 2<br>
-                    PLZ/Ort: <br><br>
-                    Kontakt: Mail: <br>
-                    Tel.: <br><br>
+                    Waidhofner Straße 2<br>
+                    3300 Amstetten<br><br>
+                    Kontakt:<br>
+                    Mail: XXXXX<br>
+                    Tel.: XXXXX<br><br>
                     Bankverbindung/Spendenkonto:<br>
-                    IBAN: 
+                    IBAN: AT XX XXXX XXXX XXXX XXXX
                 </div>
             </div>
         </div>
     </footer>
     <script src="./scripts/menu.js"></script>
     <script src="./scripts/switch.js"></script>
-    
     <script>
-        const newsContainer = document.getElementById('newsContainer');
-        const popup = document.getElementById('popup');
-        const popupTitle = document.getElementById('popupTitle');
-        const popupDate = document.getElementById('popupDate');
-        const popupText = document.getElementById('popupText');
-        const popupImage = document.getElementById('popupImage');
-    
-        let allNews = []; // Speichert ALLE News
-        let currentIndex = 0; // Zeigt an, wo wir gerade sind
-        const itemsPerPage = 3; // Anzahl der News pro "Seite"
-    
-        let currentImages = [];
-        let currentImageIndex = 0;
-    
-        function openPopup(news) {
-            popupTitle.textContent = news.title;
-            popupDate.textContent = news.date;
-            popupText.textContent = news.content;
-
-            const popupImagesContainer = document.getElementById("popupImagesContainer");
-            popupImagesContainer.innerHTML = "";
-
-            news.images.forEach(imageName => {
-                const img = document.createElement("img");
-                img.src = "./uploads/" + imageName;
-                popupImagesContainer.appendChild(img);
-            });
-
-            popup.style.display = 'flex';
-            
-        }
-    
-        function closePopup() {
-            popup.style.display = 'none';
-        }
-
-        function createNewsItem(news) {
-            const item = document.createElement('div');
-            item.className = 'news-item';
-            item.onclick = () => openPopup(news);
-    
-            const img = document.createElement('img');
-            img.src = "./uploads/" + news.images[0];
-            img.loading = 'lazy';
-            item.appendChild(img);
-    
-            const container_content = document.createElement('div');
-            container_content.className = 'news-content-container';
-            item.appendChild(container_content);
-
-            const container_text = document.createElement('div');
-            container_text.className = 'news-text-container';
-            container_content.appendChild(container_text);
-
-            const date = document.createElement('p');
-            date.className = 'news-date';
-            container_text.appendChild(date);
-            date.textContent = news.date;
-
-            const title = document.createElement('div');
-            title.className = 'news-title';
-            container_text.appendChild(title);
-            title.textContent = news.title;
-            
-            const button = document.createElement('img');
-            button.className = 'news-arrow';
-            button.src = './uploads/arrow.svg';
-            container_content.appendChild(button);
-    
-            newsContainer.appendChild(item);
-        }
-    
-        function loadMoreNews() {
-            const nextItems = allNews.slice(currentIndex, currentIndex + itemsPerPage);
-            nextItems.forEach(createNewsItem);
-            currentIndex += itemsPerPage;
-    
-            // Wenn keine weiteren News mehr da sind, verstecke den Load More Button
-            if (currentIndex >= allNews.length) {
-                document.getElementById('loadMoreButton').style.display = 'none';
-            }
-        }
-    
-        // Lade alle News aus JSON
-        fetch('./admin/news/news.json')
-            .then(response => response.json())
-            .then(data => {
-                allNews = data.reverse();
-                loadMoreNews(); // Lade die ersten 6
-            })
-            .catch(error => {
-                console.error('Error loading news:', error);
-            });
     </script>
-
-    
 </body>
 </html>
