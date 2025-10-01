@@ -419,7 +419,8 @@ footer .marg-btm:hover{
     flex-direction: row;
     justify-content: flex-start;
     gap: 60px;              /* 60px Abstand zwischen Text und Bild */
-    padding-top: 100px;
+    padding-top: 140px;
+    padding-bottom: 60px;
 }
     .hero-section .hero-container{
         margin-left: 75px;
