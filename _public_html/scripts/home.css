@@ -5,25 +5,11 @@
     padding: 50px 0 80px 0;
 }
 
-.about-section {
+.normal-section {
     padding: 60px 0;
     background-color: rgba(244, 243, 238, 0.3); /* Sehr subtiler Hintergrund */
     position: relative;
 }
-
-/* Elegante Trennung zwischen Sektionen */
-.about-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--highlight), transparent);
-    border-radius: 2px;
-}
-
 .hero-text {
     display: flex;
     align-items: center;
@@ -44,23 +30,23 @@
 }
 
 /* Über uns Sektion */
-.about-section .about-content {
+.normal-section .normal-content {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.about-content h2 {
+.normal-content h2 {
     margin-bottom: 30px;
 }
 
-.about-content p {
+.normal-content p {
     margin-right: 200px; /* Platz für den Button rechts */
     line-height: 1.6;
 }
 
-.about-content a {
+.normal-content a {
     position: absolute;
     top: 50px; /* Positioniert unter der Überschrift */
     right: 20px;
@@ -73,7 +59,7 @@
     transition: all 0.3s ease;
 }
 
-.about-content a:hover {
+.normal-content a:hover {
     background-color: transparent;
     color: var(--button-color);
     border: 2px solid var(--button-color);
@@ -91,13 +77,12 @@
         order: -1; /* Bild oben auf mobilen Geräten */
     }
     
-    /* Über uns responsive */
-    .about-content p {
+    .normal-content p {
         margin-right: 0;
         margin-bottom: 30px;
     }
-    
-    .about-content a {
+
+    .normal-content a {
         position: static;
         display: inline-block;
         margin-top: 20px;
@@ -124,7 +109,7 @@
     }
     
     /* Über uns auf größeren Bildschirmen */
-    .about-content p {
+    .normal-content p {
         margin-right: 220px;
     }
 }
