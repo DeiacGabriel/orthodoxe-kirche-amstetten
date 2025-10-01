@@ -83,7 +83,7 @@ body {
     --sec-color: #F4F3EE;
     --ter-color: #1F2937;
     --qua-color: #1F2937;
-    --nav-color: #BCB8B1;
+    --nav-color: transparent;
     --button-color: #8A817C; 
 }
 h1 {
@@ -362,7 +362,7 @@ footer{
     padding-top: 200px;
 }
 .footer-headline img{
-    width: 20%;
+    width: 15%;
     max-width: 200px;
     height: auto;
 }
@@ -370,7 +370,7 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     padding: 50px 0;
 }
