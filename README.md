@@ -6,6 +6,10 @@ Diese Website und alle Inhalte (Texte, Bilder, Logos, Predigten) stehen unter de
 
 Dies ist die offizielle Website der Orthodoxen Kirche Amstetten. Sie bietet Informationen zur Gemeinde, Gottesdiensten, Veranstaltungen und Kontaktmöglichkeiten.
 
+## Technologien
+PHP
+C# (Backup Technologie falls PHP nicht den funktionellen Ansprüchen gerecht wird) -> Branch csharh
+
 ## Lizenz
 
 Alle Inhalte und der Quellcode stehen unter der Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) Lizenz. Siehe `LICENSE` und `NOTICE.md` für Details.
