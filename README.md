@@ -8,7 +8,7 @@ Dies ist die offizielle Website der Orthodoxen Kirche Amstetten. Sie bietet Info
 
 ## Technologien
 PHP
-C# (Backup Technologie falls PHP nicht den funktionellen Ansprüchen gerecht wird) -> Branch csharh
+C# (Backup Technologie falls PHP nicht den funktionellen Ansprüchen gerecht wird) -> Branch csharh -> wird wegen den Kosten nicht benutzt
 
 ## Lizenz
 
