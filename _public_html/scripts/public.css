@@ -148,10 +148,6 @@ h1, h2, h3, .text, img{
     border-radius: 2px;
     margin: 50px auto;
     position: relative;
-    height: 3px;
-    border-radius: 2px;
-    margin: 50px auto;
-    position: relative;
     background-color: var(--ter-color);
     width: 50%;
     max-width: 500px;

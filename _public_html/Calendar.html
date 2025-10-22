@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scripts/public.css">
+    <link rel="stylesheet" href="./scripts/calendar.css">
+    <title>Orthodoxer Kalender - Orthodoxe Kirche Amstetten</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="header-img-group">
+                    <img src="./uploads/logo48.png"/>
+                    <div>Orthodoxe Kirche Amstetten</div>
+                </div>
+                <div class="big-nav">
+                    <a class="text2 nav-item" href="./index.html">Home</a>
+                    <a class="text2 nav-item" href="./AboutUs.html">Über uns</a>
+                    <a class="text2 nav-item" href="./Calendar.html">Kalender</a>
+                    <a class="text2 nav-item" href="">Events</a>
+                    <a class="text2 nav-item" href="">Galerie</a>
+                    <a target="_blank" class="text2 nav-item" href="https://www.facebook.com/bisericaortodoxaamstetten/?locale=de_DE/">Facebook</a>
+                </div>
+                <img id="menu" src="./uploads/menu-button.png" onclick="changeMenu(event)"/>
+            </div>
+            <div id="open-menu" class="open-menu hide" onclick="changeMenu(event)">
+                <img id="close" class="hide close" src="./uploads/menu-button.png" onclick="changeMenu(event)"/>
+                <a class="text2 primary-item" href="./index.html">Home</a>
+                <a class="text2 primary-item" href="../AboutUs.html">Über uns</a>
+                <a class="text2 primary-item" href="./Calendar.html">Kalender</a>
+                <a class="text2 primary-item" href="">Events</a>
+                <a class="text2 primary-item" href="">Galerie</a>
+                <a target="_blank" class="text2 primary-item" href="https://www.facebook.com/bisericaortodoxaamstetten/?locale=de_DE/">Facebook</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="headlines">
+                    <h1>Orthodoxer Kalender</h1>
+                    <h2>Feiertage und Heiligentage</h2>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="./uploads/logo48.png" alt="Orthodoxe Kirche" />
+            </div>
+        </section>
+
+        <div class="separator"></div>
+
+        <section class="calendar-section">
+            <div class="calendar-controls">
+                <button id="prevMonth" class="nav-btn">&lt;</button>
+                <h2 id="monthYear">Oktober 2025</h2>
+                <button id="nextMonth" class="nav-btn">&gt;</button>
+            </div>
+
+            <div class="calendar-container">
+                <div class="calendar-grid">
+                    <div class="day-header">Luni</div>
+                    <div class="day-header">Marți</div>
+                    <div class="day-header">Miercuri</div>
+                    <div class="day-header">Joi</div>
+                    <div class="day-header">Vineri</div>
+                    <div class="day-header">Sâmbătă</div>
+                    <div class="day-header">Duminică</div>
+                    <!-- Kalendertage werden hier dynamisch eingefügt -->
+                </div>
+            </div>
+
+            <div class="events-sidebar">
+                <h3>Orthodoxe Feiertage</h3>
+                <div id="eventsList">
+                    <!-- Events werden hier dynamisch eingefügt -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-headline">
+            <img src="./uploads/wappen.png" />
+            <h2>Orthodoxe Kirche Amstetten</h2>
+        </div>
+        <div class="separator"></div>
+        <div class="links">
+            <div class="footer-text">
+                Orthodoxer Kalender nach rumänischer Tradition<br>
+                Alle Daten nach julianischem Kalender<br><br>
+                Für Fragen zu Gottesdiensten kontaktieren Sie uns:<br>
+                Tel.: +43 123 456 789<br>
+                Email: kontakt@orthodoxe-amstetten.at
+            </div>
+        </div>
+    </footer>
+
+    <script src="./scripts/calendar.js"></script>
+    <script>
+        // Menu Script aus public.css
+        var x = 1;
+        function changeMenu(event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            if (x == 1) {
+                document.getElementById("close").style.display = "block";
+                document.getElementById("open-menu").style.display = "flex";
+                document.getElementById("menu").style.display = "none";
+                x = 0;
+            } else {
+                if(window.innerWidth > 1000)
+                    document.getElementById("menu").style.display = "none";
+                else
+                    document.getElementById("menu").style.display = "block";
+                document.getElementById("close").style.display = "none";
+                document.getElementById("open-menu").style.display = "none";
+                x = 1;
+            }
+        }
+        document.getElementById("open-menu").addEventListener("click", function () {
+            if (x == 0) {
+                changeMenu();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+/* Kalender-spezifische Styles */
+
+.calendar-section {
+    padding: 40px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.calendar-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.nav-btn {
+    background-color: var(--button-color);
+    color: var(--sec-color);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-btn:hover {
+    background-color: var(--highlight);
+    transform: scale(1.1);
+}
+
+#monthYear {
+    font-size: 2em;
+    color: var(--pri-color);
+    min-width: 300px;
+    text-align: center;
+}
+
+.calendar-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.day-header {
+    background-color: var(--ter-color);
+    color: var(--sec-color);
+    padding: 15px 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.calendar-day {
+    background-color: var(--sec-color);
+    border: 1px solid #e0e0e0;
+    min-height: 80px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-day:hover {
+    background-color: var(--highlight);
+    color: var(--sec-color);
+}
+
+.calendar-day.other-month {
+    background-color: #f5f5f5;
+    color: #ccc;
+}
+
+.calendar-day.today {
+    background-color: var(--button-color);
+    color: var(--sec-color);
+    font-weight: bold;
+}
+
+.calendar-day.has-event {
+    background-color: #fff8dc;
+    border-left: 4px solid var(--highlight);
+}
+
+.day-number {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.day-events {
+    font-size: 0.7em;
+    color: var(--ter-color);
+    line-height: 1.2;
+}
+
+.event-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--highlight);
+    border-radius: 50%;
+    margin: 2px 0;
+}
+
+/* Events Sidebar */
+.events-sidebar {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.events-sidebar h3 {
+    color: var(--pri-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--ter-color);
+    padding-bottom: 10px;
+}
+
+.event-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: var(--sec-color);
+    border-radius: 8px;
+    border-left: 4px solid var(--highlight);
+}
+
+.event-date {
+    font-weight: bold;
+    color: var(--ter-color);
+    font-size: 0.9em;
+}
+
+.event-title {
+    color: var(--pri-color);
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.event-description {
+    font-size: 0.8em;
+    color: #666;
+    line-height: 1.4;
+}
+
+.feast-day {
+    border-left-color: #d4af37 !important;
+}
+
+.saint-day {
+    border-left-color: #8b4513 !important;
+}
+
+.fast-day {
+    border-left-color: #800080 !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .calendar-section {
+        padding: 20px 10px;
+        gap: 20px;
+    }
+    
+    .calendar-controls {
+        gap: 15px;
+    }
+    
+    #monthYear {
+        font-size: 1.5em;
+        min-width: 200px;
+    }
+    
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+    }
+    
+    .calendar-day {
+        min-height: 60px;
+        padding: 5px;
+    }
+    
+    .day-header {
+        padding: 10px 2px;
+        font-size: 0.8em;
+    }
+    
+    .day-events {
+        font-size: 0.6em;
+    }
+    
+    .events-sidebar {
+        order: -1; /* Zeigt Events über dem Kalender auf Mobile */
+    }
+}
+
+@media (min-width: 1000px) {
+    .calendar-section {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto 1fr;
+    }
+    
+    .calendar-controls {
+        grid-column: 1 / -1;
+    }
+    
+    .calendar-container {
+        grid-column: 1;
+    }
+    
+    .events-sidebar {
+        grid-column: 2;
+    }
+    
+    .calendar-day {
+        min-height: 100px;
+    }
+}
