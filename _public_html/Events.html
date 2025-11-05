@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./scripts/public.css">
-    <link rel="stylesheet" type="text/css" href="./scripts/home.css">
-    <title>Startseite - Orthodoxe Kirche Amstetten</title>
+    <link rel="stylesheet" type="text/css" href="./scripts/DEINE-SEITE.css">
+    <title>Seitentitel - Orthodoxe Kirche Amstetten</title>
     <link rel="icon" type="image/png" sizes="48x48" href="./uploads/logo48.png">
     
-    <script defer src="./scripts/loadContent.js"></script>
-    <meta name="description" content="Homepage der Orthodoxen Kirche Amstetten. Informieren Sie sich über unsere Gottesdienste, Veranstaltungen und Angebote.">
-    <meta name="keywords" content="Orthodoxe Kirche, Amstetten, Gottesdienste, Veranstaltungen, Angebote">
-    <meta property="og:title" content="Orthodoxe Kirche Amstetten - Startseite">
-    <meta property="og:description" content="Homepage der Orthodoxen Kirche Amstetten. Informieren Sie sich über unsere Gottesdienste, Veranstaltungen und Angebote.">
-
+    <meta name="description" content="Beschreibung deiner Seite">
+    <meta name="keywords" content="Keywords, für, deine, Seite">
 </head>
 <body>
     <header>
@@ -27,7 +23,7 @@
                     <a class="text2 nav-item" href="./index.html">Home</a>
                     <a class="text2 nav-item" href="./AboutUs.html">Über uns</a>
                     <a class="text2 nav-item" href="./Calendar.html">Kalender</a>
-                    <a class="text2 nav-item" href="">Events</a>
+                    <a class="text2 nav-item" href="./Events.html">Events</a>
                     <a class="text2 nav-item" href="">Galerie</a>
                     <a target="_blank" class="text2 nav-item" href="https://de-de.facebook.com/bisericaortodoxaamstetten/">Facebook</a>
                 </div>
@@ -39,52 +35,58 @@
                 <a class="text2 primary-item" href="./AboutUs.html">Über uns</a>
                 <a class="text2 primary-item" href="./Calendar.html">Kalender</a>
                 <a class="text2 primary-item" href="./Events.html">Events</a>
-                <a target="_blank" class="text2 primary-item" href="./Gallery.html">Galerie</a>
+                <a class="text2 primary-item" href="./Gallery.html">Galerie</a>
                 <a target="_blank" class="text2 primary-item" href="https://de-de.facebook.com/bisericaortodoxaamstetten/">Facebook</a>
             </div>
         </nav>
     </header>
+
     <main>
         <!-- Hero-Sektion -->
         <section class="hero-section">
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="hero-text-content">
-                        <h1 id="hero-title">Orthodoxen Kirche Amstetten</h1>
-                        <p id="hero-description">Willkommen auf der Offiziellen Website der Orthodoxen Kirche Amstetten.</p>
+                        <h1>Dein Haupttitel</h1>
+                        <p>Deine Beschreibung hier</p>
                     </div>
-                    <img id="hero-image" src="./uploads/wappen.png" alt="Kirchenbild"/>
+                    <img src="./uploads/wappen.png" alt="Bild"/>
                 </div>
             </div>
         </section>
+
         <div class="separator"></div>
-        <!--Über uns Sektion -->
+
+        <!-- Erste Content-Sektion -->
         <section class="normal-section">
             <div class="normal-content">
-                <h2>Über uns</h2>
-                <p>Die Orthodoxe Kirche Amstetten ist eine lebendige Gemeinschaft von Gläubigen, die sich dem Glauben und der Tradition der Orthodoxen Kirche verpflichtet fühlt.</p>
-                <a href="./AboutUs.html">Mehr erfahren</a>
+                <h2>Überschrift Sektion 1</h2>
+                <p>Dein Text hier...</p>
             </div>
         </section>
+
         <div class="separator"></div>
-        <!--Gottesdienste Sektion -->
+
+        <!-- Zweite Content-Sektion -->
         <section class="normal-section">
             <div class="normal-content">
-                <h2>Events</h2>
-                <p>Die Orthodoxe Kirche Amstetten bietet regelmäßige Veranstaltungen/Gottesdienste an, zu denen alle Gläubigen herzlich eingeladen sind.</p>
-                <a href="./Services.html">Events</a>
+                <h2>Überschrift Sektion 2</h2>
+                <p>Dein Text hier...</p>
+                <a href="./LinkZuAndererSeite.html">Mehr erfahren</a>
             </div>
         </section>
+
         <div class="separator"></div>
-        <!--Gottesdienste Sektion -->
+
+        <!-- Weitere Sektionen nach Bedarf -->
         <section class="normal-section">
             <div class="normal-content">
-                <h2>Galerie</h2>
-                <p>In unserer Galerie finden Sie eine Auswahl an Bildern und Eindrücken aus dem Leben der Orthodoxen Kirche Amstetten.</p>
-                <a href="./Gallery.html">Mehr Bilder</a>
+                <h2>Überschrift Sektion 3</h2>
+                <p>Dein Text hier...</p>
             </div>
         </section>
     </main>
+
     <footer>
         <div class="footer-headline">
             <img src="./uploads/wappen.png" />
@@ -111,34 +113,32 @@
             </div>
         </div>
     </footer>
-    <script src="./scripts/menu.js"></script>
-    <script src="./scripts/switch.js"></script>
+
     <script>
     var x = 1;
 
     function changeMenu(event) {
-    if (event) {
-        event.stopPropagation();
-    }
+        if (event) {
+            event.stopPropagation();
+        }
 
-    if (x == 1) {
-        document.getElementById("close").style.display = "block";
-        document.getElementById("open-menu").style.display = "flex";
-        document.getElementById("menu").style.display = "none";
-        x = 0;
-        console.log("opened menu");
-    } else {
-        
-        if(window.innerWidth > 1000)
+        if (x == 1) {
+            document.getElementById("close").style.display = "block";
+            document.getElementById("open-menu").style.display = "flex";
             document.getElementById("menu").style.display = "none";
-        else
-            document.getElementById("menu").style.display = "block";
-        document.getElementById("close").style.display = "none";
-        document.getElementById("open-menu").style.display = "none";
-        x = 1;
-        console.log("closed menu");
+            x = 0;
+            console.log("opened menu");
+        } else {
+            if(window.innerWidth > 1000)
+                document.getElementById("menu").style.display = "none";
+            else
+                document.getElementById("menu").style.display = "block";
+            document.getElementById("close").style.display = "none";
+            document.getElementById("open-menu").style.display = "none";
+            x = 1;
+            console.log("closed menu");
+        }
     }
-}
 
     document.getElementById("open-menu").addEventListener("click", function () {
         if (x == 0) {
