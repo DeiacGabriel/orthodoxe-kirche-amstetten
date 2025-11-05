@@ -1,0 +1,115 @@
+/* Spezifische Stile für die Startseite */
+
+/* Sektionen-Abstände */
+.hero-section {
+    padding: 50px 0 80px 0;
+}
+
+.normal-section {
+    padding: 60px 0;
+    background-color: rgba(244, 243, 238, 0.3); /* Sehr subtiler Hintergrund */
+    position: relative;
+}
+.hero-text {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.hero-text-content {
+    flex: 1;
+}
+
+.hero-text #hero-image {
+    width: 120px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* Über uns Sektion */
+.normal-section .normal-content {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.normal-content h2 {
+    margin-bottom: 30px;
+}
+
+.normal-content p {
+    margin-right: 200px; /* Platz für den Button rechts */
+    line-height: 1.6;
+}
+
+.normal-content a {
+    position: absolute;
+    top: 50px; /* Positioniert unter der Überschrift */
+    right: 20px;
+    background-color: var(--button-color);
+    color: var(--sec-color);
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.normal-content a:hover {
+    background-color: transparent;
+    color: var(--button-color);
+    border: 2px solid var(--button-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-text {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .hero-text #hero-image {
+        order: -1; /* Bild oben auf mobilen Geräten */
+    }
+    
+    .normal-content p {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .normal-content a {
+        position: static;
+        display: inline-block;
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 769px) {
+    .hero-text {
+        gap: 40px;
+    }
+    
+    .hero-text #hero-image {
+        width: 150px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .hero-text {
+        gap: 60px;
+    }
+    
+    .hero-text #hero-image {
+        width: 180px;
+    }
+    
+    /* Über uns auf größeren Bildschirmen */
+    .normal-content p {
+        margin-right: 220px;
+    }
+}
