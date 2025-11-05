@@ -3,36 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./_public_html/scripts/public.css">
-    <link rel="stylesheet" href="./_public_html/scripts/aboutus.css">
-
-    <title>Document</title>
+    <link rel="stylesheet" href="./scripts/public.css">
+    <link rel="stylesheet" href="./scripts/aboutus.css">
+    <title>Orthodoxer Kalender - Orthodoxe Kirche Amstetten</title>
+    <link rel="icon" type="image/png" sizes="48x48" href="./uploads/logo48.png">
+    
 </head>
 <body>
     <header>
         <nav>
             <div class="nav-container">
                 <div class="header-img-group">
-                    <img src="./_public_html/uploads/logo48.png"/>
+                    <img src="./uploads/wappen.png"/>
                     <div>Orthodoxe Kirche Amstetten</div>
                 </div>
                 <div class="big-nav">
                     <a class="text2 nav-item" href="./index.html">Home</a>
-                    <a class="text2 nav-item" href="">Über uns</a>
-                    <a class="text2 nav-item" href="">Kalender</a>
+                    <a class="text2 nav-item" href="./AboutUs.html">Über uns</a>
+                    <a class="text2 nav-item" href="./Calendar.html">Kalender</a>
                     <a class="text2 nav-item" href="">Events</a>
                     <a class="text2 nav-item" href="">Galerie</a>
                     <a target="_blank" class="text2 nav-item" href="https://www.facebook.com/bisericaortodoxaamstetten/?locale=de_DE/">Facebook</a>
                 </div>
-                <img id="menu" src="./uploads/menu.svg" onclick="changeMenu(event)"/>
+                <img id="menu" src="./uploads/menu-button.png" onclick="changeMenu(event)"/>
             </div>
             <div id="open-menu" class="open-menu hide" onclick="changeMenu(event)">
-                <img id="close" class="hide close" src="./_public_html/uploads/menu-button.png" onclick="changeMenu(event)"/>
+                <img id="close" class="hide close" src="./uploads/menu-button.png" onclick="changeMenu(event)"/>
 
                 <a class="text2 primary-item" href="./Index.html">Home</a>                
-                <a class="text2 primary-item" href="">Über uns</a>                
-                <a class="text2 primary-item" href="">Kalender</a>                
-                <a class="text2 primary-item" href=""></a>                
+                <a class="text2 primary-item" href="./AboutUs.html">Über uns</a>                
+                <a class="text2 primary-item" href="./Calendar.html">Kalender</a> 
+                <a class="text2 primary-item" href="./Events.html">Events</a>               
+                <a class="text2 primary-item" href="">Galerie</a>                
                 <a target="_blank" class="text2 primary-item" href="https://m.facebook.com/feuerwehrgreinsfurth/">Facebook</a>
             </div>
         </nav>
@@ -47,7 +49,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="./_public_html/uploads/logo48.png" alt="Kirche" />
+                <img src="./uploads/wappen.png" alt="Kirche" />
             </div>
         </section>
         
@@ -91,6 +93,29 @@
             </div>
         </section>
 
+        <div class="separator"></div>
+
+
+        <section class="history-section">
+            <h2>Unsere Geschichte</h2>
+            <div class="history-container">
+                <div>
+                    Die Filialkirche St. Agatha in Eisenreichdornach bei Amstetten wurde im 9. Jahrhundert gegründet - also noch lange, bevor sich die Christenheit im Jahr 1054 in katholische und orthodoxe Kirchen trennte. Ein Zeichen der Ökumene setzt die Salesianerpfarre Amstetten Herz Jesu: Seit einigen Monaten können dort rumänisch-orthodoxe Christen bis auf Weiteres ihre Sonntagsgottesdienste feiern. Bei einer katholischen heiligen Messe am Hochfest Peter und Paul wurden die Priester der rumänisch-orthodoxen Kirche eingeladen, sich vorzustellen und Unterschiede und Gemeinsamkeiten zu präsentieren. Denn: Wer miteinander Gottesdienst feiert, miteinander spricht, isst und trinkt, ist einander kein Fremder mehr. <br><br> Der Pfarrer von Amstetten Herz Jesu, Pater Hans Schwarzl, erinnerte daran, dass es in den letzten Jahrzehnten wieder zur ökumenischen Annäherung gekommen ist.
+                </div>
+            </div>
+
+
+        <div class="separator"></div>
+
+        <section class="maps-section">
+            <h2>Unser Standort</h2>
+            <div class="maps-container">
+            <div>Dornacher Str. 17, 3300 Amstetten</div>
+                <div class="location">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2663.013245132785!2d14.885798275097118!3d48.12926795174141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4772491c445547ff%3A0x618439793b80566e!2sParohia%20Ortodoxa%20%22Sf.%20Cuv.%20Paisie%20de%20la%20Neam%C8%9B%20%C8%99i%20Sf.%20Mc.%20Agata%22%20din%20Amstetten!5e0!3m2!1sde!2sat!4v1759299977923!5m2!1sde!2sat" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <a href="https://www.google.com/maps/place/Parochia+Ortodoxa+%22Sf.+Cuv.+Paisie+de+la+Neam%C8%9B+%C8%99i+Sf.+Mc.+Agata%22+din+Amstetten/@48.1292679,14.8857983,17z" target="_blank" class="maps-button">In Google Maps öffnen</a>
+        </section>
     </main>
 <footer>
         <div class="footer-headline">
@@ -98,6 +123,7 @@
             <h2>Orthodoxe Kirche Amstetten</h2>
         </div>
         <div class="separator"></div>
+
         <div class="links">
             <a class="marg-btm" href="./AboutUs.html#contact">Kontakt</a>
             <a class="marg-btm" href="./uploads/Impressum2025.docx" download="Impressum2025.docx">Haftungsausschluss herunterladen</a>
