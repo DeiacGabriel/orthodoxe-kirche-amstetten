@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scripts/public.css">
+    <link rel="stylesheet" href="./scripts/galerie.css">
+    <title>Galerie - Orthodoxe Kirche Amstetten</title>
+    <link rel="icon" type="image/png" sizes="48x48" href="./uploads/logo48.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="header-img-group">
+                    <img src="./uploads/wappen.png"/>
+                    <div>Orthodoxe Kirche Amstetten</div>
+                </div>
+                <div class="big-nav">
+                    <a class="text2 nav-item" href="./index.html">Home</a>
+                    <a class="text2 nav-item" href="./AboutUs.html">Über uns</a>
+                    <a class="text2 nav-item" href="./Calendar.html">Kalender</a>
+                    <a class="text2 nav-item" href="./Events.html">Events</a>
+                    <a class="text2 nav-item" href="./Galerie.html">Galerie</a>
+                    <a target="_blank" class="text2 nav-item" href="https://www.facebook.com/bisericaortodoxaamstetten/?locale=de_DE/">Facebook</a>
+                </div>
+                <img id="menu" src="./uploads/menu-button.png" onclick="changeMenu(event)"/>
+            </div>
+            <div id="open-menu" class="open-menu hide" onclick="changeMenu(event)">
+                <img id="close" class="hide close" src="./uploads/menu-button.png" onclick="changeMenu(event)"/>
+
+                <a class="text2 primary-item" href="./index.html">Home</a>                
+                <a class="text2 primary-item" href="./AboutUs.html">Über uns</a>                
+                <a class="text2 primary-item" href="./Calendar.html">Kalender</a> 
+                <a class="text2 primary-item" href="./Events.html">Events</a>               
+                <a class="text2 primary-item" href="./Galerie.html">Galerie</a>                
+                <a target="_blank" class="text2 primary-item" href="https://www.facebook.com/bisericaortodoxaamstetten/?locale=de_DE/">Facebook</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="headlines">
+                    <h1>Unsere Galerie</h1>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="./uploads/wappen.png" alt="Kirche" />
+            </div>
+        </section>
+        
+        <div class="separator"></div>
+
+        <section class="slideshow-section">
+            <h2>Event-Galerie</h2>
+            
+            <div class="slideshow-container">
+                <button class="slide-nav prev" onclick="changeSlide(-1)">&#10094;</button>
+                
+                <div class="slides-wrapper">
+                    <div class="slide side-slide left" onclick="changeSlide(-1)">
+                        <div class="slide-content">
+                            <img src="./uploads/event1-1.jpg" alt="Event">
+                            <h3>Event Titel</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="slide main-slide" onclick="openEventDetails()">
+                        <div class="slide-content">
+                            <img src="./uploads/event1-1.jpg" alt="Event">
+                            <h3>Event Titel</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="slide side-slide right" onclick="changeSlide(1)">
+                        <div class="slide-content">
+                            <img src="./uploads/event2-1.jpg" alt="Event">
+                            <h3>Event Titel</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="slide-nav next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+
+            <div class="slide-indicators">
+                <!-- Wird dynamisch gefüllt -->
+            </div>
+        </section>
+
+        <!-- Event Details Modal -->
+        <div id="eventDetailsModal" class="event-modal hidden">
+            <div class="event-modal-content">
+                <span class="close-modal" onclick="closeEventDetails()">&times;</span>
+                <h2 id="modalEventTitle">Event Titel</h2>
+                <p id="modalEventDate" class="event-date"></p>
+                <p id="modalEventDescription" class="event-description"></p>
+                
+                <div class="event-gallery-grid" id="eventGalleryGrid">
+                    <!-- Bilder werden dynamisch eingefügt -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Bild Vollansicht Modal -->
+        <div id="imageModal" class="modal hidden">
+            <span class="close" onclick="closeImageModal()">&times;</span>
+            <img class="modal-content" id="modalImage">
+            <div id="caption"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-headline">
+            <img src="./uploads/wappen.png" />
+            <h2>Orthodoxe Kirche Amstetten</h2>
+        </div>
+        <div class="separator"></div>
+
+        <div class="links">
+            <a class="marg-btm" href="./AboutUs.html#contact">Kontakt</a>
+            <a class="marg-btm" href="./uploads/Impressum2025.docx" download="Impressum2025.docx">Haftungsausschluss herunterladen</a>
+
+            <div>
+                <div class="footer-text">
+                    Für den Inhalt verantwortlich:<br>
+                    Orthodoxe Kirche Amstetten<br>
+                    Abschnitt- Amstetten/Stadt<br>
+                    Pfarrer: Valentin Miloiu<br><br>
+                    Anschrift:<br>
+                    Straße: Waidhofner Straße 2<br>
+                    PLZ/Ort: <br><br>
+                    Kontakt: Mail: <br>
+                    Tel.: <br><br>
+                    Bankverbindung/Spendenkonto:<br>
+                    IBAN: 
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    const events = [
+        {
+            title: "Weihnachtsfeier 2024",
+            date: "24. Dezember 2024",
+            description: "Unsere traditionelle Weihnachtsfeier mit der gesamten Gemeinde.",
+            mainImage: "./uploads/ikonen.jpg",
+            images: [
+                "./uploads/ikonen.jpg",
+                "./uploads/ikonen2.jpg",
+                "./uploads/event1-3.jpg",
+                "./uploads/event1-4.jpg"
+            ]
+        },
+        {
+            title: "Osterfest 2025",
+            date: "20. April 2025",
+            description: "Feierliche Ostermesse und gemeinsames Fest.",
+            mainImage: "./uploads/zug.jpeg",
+            images: [
+                "./uploads/event2-1.jpg",
+                "./uploads/event2-2.jpg",
+                "./uploads/event2-3.jpg"
+            ]
+        },
+        {
+            title: "Gemeindefest Sommer",
+            date: "15. Juni 2025",
+            description: "Sommerfest mit Musik, Essen und Gemeinschaft.",
+            mainImage: "./uploads/event3-1.jpg",
+            images: [
+                "./uploads/event3-1.jpg",
+                "./uploads/event3-2.jpg",
+                "./uploads/event3-3.jpg",
+                "./uploads/event3-4.jpg",
+                "./uploads/event3-5.jpg"
+            ]
+        },
+        {
+            title: "Taufe Zeremonie",
+            date: "10. August 2025",
+            description: "Feierliche Taufzeremonie in unserer Gemeinde.",
+            mainImage: "./uploads/event4-1.jpg",
+            images: [
+                "./uploads/event4-1.jpg",
+                "./uploads/event4-2.jpg",
+                "./uploads/event4-3.jpg"
+            ]
+        },
+        {
+            title: "Herbstfest",
+            date: "22. September 2025",
+            description: "Traditionelles Herbstfest mit Erntedank.",
+            mainImage: "./uploads/event5-1.jpg",
+            images: [
+                "./uploads/event5-1.jpg",
+                "./uploads/event5-2.jpg",
+                "./uploads/event5-3.jpg",
+                "./uploads/event5-4.jpg"
+            ]
+        }
+    ];
+
+    let currentIndex = 0;
+
+    // Mobile Menu
+    var x = 1;
+
+    function changeMenu(event) {
+        if (event) {
+            event.stopPropagation();
+        }
+
+        if (x == 1) {
+            document.getElementById("close").style.display = "block";
+            document.getElementById("open-menu").style.display = "flex";
+            document.getElementById("menu").style.display = "none";
+            x = 0;
+        } else {
+            if(window.innerWidth > 1000)
+                document.getElementById("menu").style.display = "none";
+            else
+                document.getElementById("menu").style.display = "block";
+            document.getElementById("close").style.display = "none";
+            document.getElementById("open-menu").style.display = "none";
+            x = 1;
+        }
+    }
+
+    document.getElementById("open-menu").addEventListener("click", function () {
+        if (x == 0) {
+            changeMenu();
+        }
+    });
+
+    // Slideshow Funktionen
+    function updateSlideshow() {
+        const slides = document.querySelectorAll('.slide');
+        const prevIndex = (currentIndex - 1 + events.length) % events.length;
+        const nextIndex = (currentIndex + 1) % events.length;
+
+        // Linke Slide
+        slides[0].querySelector('img').src = events[prevIndex].mainImage;
+        slides[0].querySelector('h3').textContent = events[prevIndex].title;
+
+        // Mittlere Slide
+        slides[1].querySelector('img').src = events[currentIndex].mainImage;
+        slides[1].querySelector('h3').textContent = events[currentIndex].title;
+
+        // Rechte Slide
+        slides[2].querySelector('img').src = events[nextIndex].mainImage;
+        slides[2].querySelector('h3').textContent = events[nextIndex].title;
+
+        updateIndicators();
+    }
+
+    function changeSlide(direction) {
+        currentIndex = (currentIndex + direction + events.length) % events.length;
+        updateSlideshow();
+    }
+
+    function updateIndicators() {
+        const indicatorsContainer = document.querySelector('.slide-indicators');
+        indicatorsContainer.innerHTML = '';
+        
+        events.forEach((event, index) => {
+            const indicator = document.createElement('span');
+            indicator.className = 'indicator' + (index === currentIndex ? ' active' : '');
+            indicator.onclick = () => {
+                currentIndex = index;
+                updateSlideshow();
+            };
+            indicatorsContainer.appendChild(indicator);
+        });
+    }
+
+    function openEventDetails() {
+        const modal = document.getElementById('eventDetailsModal');
+        const event = events[currentIndex];
+        
+        document.getElementById('modalEventTitle').textContent = event.title;
+        document.getElementById('modalEventDate').textContent = event.date;
+        document.getElementById('modalEventDescription').textContent = event.description;
+        
+        const galleryGrid = document.getElementById('eventGalleryGrid');
+        galleryGrid.innerHTML = '';
+        
+        event.images.forEach(imageSrc => {
+            const imgContainer = document.createElement('div');
+            imgContainer.className = 'gallery-image-item';
+            
+            const img = document.createElement('img');
+            img.src = imageSrc;
+            img.alt = event.title;
+            img.onclick = () => openImageModal(imageSrc, event.title);
+            
+            imgContainer.appendChild(img);
+            galleryGrid.appendChild(imgContainer);
+        });
+        
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeEventDetails() {
+        document.getElementById('eventDetailsModal').classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+
+    function openImageModal(src, alt) {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const caption = document.getElementById('caption');
+        
+        modal.classList.remove('hidden');
+        modalImg.src = src;
+        caption.textContent = alt;
+    }
+
+    function closeImageModal() {
+        document.getElementById('imageModal').classList.add('hidden');
+    }
+
+    // ESC Taste zum Schließen
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeEventDetails();
+            closeImageModal();
+        }
+    });
+
+    // Click außerhalb des Modals zum Schließen
+    document.getElementById('eventDetailsModal').addEventListener('click', function(event) {
+        if (event.target === this) {
+            closeEventDetails();
+        }
+    });
+
+    document.getElementById('imageModal').addEventListener('click', function(event) {
+        if (event.target === this) {
+            closeImageModal();
+        }
+    });
+
+    // Keyboard Navigation für Slideshow
+    document.addEventListener('keydown', function(event) {
+        if (!document.getElementById('eventDetailsModal').classList.contains('hidden')) {
+            return; // Keine Slideshow-Navigation wenn Modal offen ist
+        }
+        
+        if (event.key === 'ArrowLeft') {
+            changeSlide(-1);
+        } else if (event.key === 'ArrowRight') {
+            changeSlide(1);
+        }
+    });
+
+    // Initialisierung
+    window.addEventListener('load', function() {
+        updateSlideshow();
+    });
+    </script>
+</body>
+</html>
