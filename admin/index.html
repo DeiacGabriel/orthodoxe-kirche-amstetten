@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Home</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="load();">
+    <header>
+        <nav>
+            <a href="./index.html">Home bearbeiten</a>
+            <a href="./AboutUsEdit.html">Über uns bearbeiten</a>
+            <a href="./CalendarEdit.html">Kalendar bearbeiten</a>
+            <a href="./EventsEdit.html">Events bearbeiten</a>
+            <a href="./GalerieEdit.html">Galerie bearbeiten</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Home Sektionen bearbeiten</h1>
+        
+        <!-- Hintergrundbild -->
+        <h2>Hintergrundbild</h2>
+        <form id="backgroundForm" class="mrg-btm" enctype="multipart/form-data">
+            <label for="background-image">Hintergrundbild hochladen</label>
+            <input class="hide" type="file" id="background-image" name="backgroundImage" accept="image/*" onchange="updateBackgroundLabel(this)">
+            <label for="background-image" id="background-label">Bild auswählen</label>
+            <div id="current-background" style="margin-top: 10px; color: #666;"></div>
+            <button type="submit" class="button">Bild hochladen</button>
+        </form>
+        
+        <!-- Über uns Sektion -->
+        <h2>Über uns Sektion</h2>
+        <form id="aboutForm" class="mrg-btm">
+            <label for="about-title">Titel</label>
+            <input type="text" id="about-title" name="title" placeholder="Titel" required>
+            
+            <label for="about-text">Text</label>
+            <textarea id="about-text" name="text" placeholder="Beschreibungstext" rows="4" required></textarea>
+            
+            <label for="about-linkText">Link-Text</label>
+            <input type="text" id="about-linkText" name="linkText" placeholder="z.B. Mehr erfahren" required>
+            
+            <label for="about-linkUrl">Link-URL</label>
+            <input type="text" id="about-linkUrl" name="linkUrl" placeholder="z.B. ./AboutUs.html" required>
+            
+            <button type="submit" class="button">Speichern</button>
+        </form>
+        
+        <!-- Events Sektion -->
+        <h2>Events Sektion</h2>
+        <form id="eventsForm" class="mrg-btm">
+            <label for="events-title">Titel</label>
+            <input type="text" id="events-title" name="title" placeholder="Titel" required>
+            
+            <label for="events-text">Text</label>
+            <textarea id="events-text" name="text" placeholder="Beschreibungstext" rows="4" required></textarea>
+            
+            <label for="events-linkText">Link-Text</label>
+            <input type="text" id="events-linkText" name="linkText" placeholder="z.B. Events" required>
+            
+            <label for="events-linkUrl">Link-URL</label>
+            <input type="text" id="events-linkUrl" name="linkUrl" placeholder="z.B. ./Events.html" required>
+            
+            <button type="submit" class="button">Speichern</button>
+        </form>
+        
+        <!-- Galerie Sektion -->
+        <h2>Galerie Sektion</h2>
+        <form id="galleryForm" class="mrg-btm">
+            <label for="gallery-title">Titel</label>
+            <input type="text" id="gallery-title" name="title" placeholder="Titel" required>
+            
+            <label for="gallery-text">Text</label>
+            <textarea id="gallery-text" name="text" placeholder="Beschreibungstext" rows="4" required></textarea>
+            
+            <label for="gallery-linkText">Link-Text</label>
+            <input type="text" id="gallery-linkText" name="linkText" placeholder="z.B. Mehr Bilder" required>
+            
+            <label for="gallery-linkUrl">Link-URL</label>
+            <input type="text" id="gallery-linkUrl" name="linkUrl" placeholder="z.B. ./Galerie.html" required>
+            
+            <button type="submit" class="button">Speichern</button>
+        </form>
+    </main>
+    <script>
+        function updateBackgroundLabel(input) {
+            const label = document.getElementById('background-label');
+            if (input.files.length > 0) {
+                label.textContent = input.files[0].name;
+            } else {
+                label.textContent = "Bild auswählen";
+            }
+        }
+    </script>
+    <script src="./Home/home.js"></script>
+</body>
+</html>

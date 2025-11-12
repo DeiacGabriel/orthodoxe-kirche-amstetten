@@ -1,0 +1,7 @@
+<FilesMatch "\.(html)$">
+    AuthType Basic
+    AuthName "Admin-Panel"
+    AuthUserFile /var/www/html/admin/.htpasswd
+    Require valid-user
+</FilesMatch>
+# PW: OrthodoxeKircheAM2025
