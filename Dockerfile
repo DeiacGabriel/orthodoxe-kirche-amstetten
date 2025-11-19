@@ -19,13 +19,20 @@ RUN echo '<Directory /var/www/html/>' >> /etc/apache2/sites-available/000-defaul
     echo '    Require all granted' >> /etc/apache2/sites-available/000-default.conf && \
     echo '</Directory>' >> /etc/apache2/sites-available/000-default.conf
 
-# Setze Berechtigungen für Upload-Ordner
-RUN chown -R www-data:www-data /var/www/html/_public_html/uploads
-RUN chmod -R 755 /var/www/html/_public_html/uploads
+# Erstelle ein Startup-Script für Berechtigungen
+RUN echo '#!/bin/bash\n\
+chown -R www-data:www-data /var/www/html/_public_html/uploads\n\
+chmod -R 777 /var/www/html/_public_html/uploads\n\
+chown -R www-data:www-data /var/www/html/admin/Home\n\
+chmod -R 777 /var/www/html/admin/Home\n\
+chown -R www-data:www-data /var/www/html/admin/AboutUs\n\
+chmod -R 777 /var/www/html/admin/AboutUs\n\
+exec apache2-foreground' > /usr/local/bin/docker-entrypoint.sh
 
-# Setze Berechtigungen für admin/Home Ordner
-RUN chown -R www-data:www-data /var/www/html/admin/Home
-RUN chmod -R 755 /var/www/html/admin/Home
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 # Exponiere Port 80
 EXPOSE 80
+
+# Verwende das Startup-Script
+CMD ["/usr/local/bin/docker-entrypoint.sh"]

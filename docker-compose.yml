@@ -12,3 +12,12 @@ services:
     environment:
       - APACHE_DOCUMENT_ROOT=/var/www/html
     restart: "no"
+    # Setze Berechtigungen beim Start
+    command: >
+      bash -c "chown -R www-data:www-data /var/www/html/_public_html/uploads &&
+      chmod -R 777 /var/www/html/_public_html/uploads &&
+      chown -R www-data:www-data /var/www/html/admin/Home &&
+      chmod -R 777 /var/www/html/admin/Home &&
+      chown -R www-data:www-data /var/www/html/admin/AboutUs &&
+      chmod -R 777 /var/www/html/admin/AboutUs &&
+      apache2-foreground"

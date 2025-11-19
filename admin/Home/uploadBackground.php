@@ -18,6 +18,9 @@ if (!file_exists($uploadDir)) {
     mkdir($uploadDir, 0777, true);
 }
 
+// Setze Berechtigungen für Docker
+@chmod($uploadDir, 0777);
+
 // Prüfe ob Datei hochgeladen wurde
 if (!isset($_FILES['backgroundImage']) || $_FILES['backgroundImage']['error'] !== UPLOAD_ERR_OK) {
     echo json_encode(['success' => false, 'message' => 'Keine Datei hochgeladen oder Fehler beim Upload']);
@@ -37,6 +40,14 @@ if (!in_array($file['type'], $allowedTypes)) {
 $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
 $filename = 'home-background-' . time() . '.' . $extension;
 $targetPath = $uploadDir . $filename;
+
+// Debug-Info zum Pfad
+$debugInfo = [
+    'tmp_name' => $file['tmp_name'],
+    'target' => $targetPath,
+    'upload_dir_exists' => file_exists($uploadDir),
+    'upload_dir_writable' => is_writable($uploadDir)
+];
 
 // Verschiebe Datei
 if (move_uploaded_file($file['tmp_name'], $targetPath)) {
@@ -65,6 +76,12 @@ if (move_uploaded_file($file['tmp_name'], $targetPath)) {
         echo json_encode(['success' => false, 'message' => 'Fehler beim Speichern der Daten']);
     }
 } else {
-    echo json_encode(['success' => false, 'message' => 'Fehler beim Verschieben der Datei']);
+    $error = error_get_last();
+    echo json_encode([
+        'success' => false, 
+        'message' => 'Fehler beim Verschieben der Datei',
+        'debug' => $debugInfo,
+        'error' => $error ? $error['message'] : 'Unbekannter Fehler'
+    ]);
 }
 ?>

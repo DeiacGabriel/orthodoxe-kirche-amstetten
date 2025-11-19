@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin-Über uns</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" sizes="48x48" href="../_public_html/uploads/logo48-removebg-preview.png">
 </head>
-<body onload="load();">
+<body>
     <header>
         <nav>
             <a href="./index.html">Home bearbeiten</a>
@@ -19,26 +20,43 @@
         </nav>
     </header>
     <main>
-        <h1>Über uns</h1>
-        <form class="mrg-btm" action="./news/save.php" method="POST" enctype="multipart/form-data">
-            <input type="text" id="title" name="title" placeholder="Titel" required>
-            <input type="date" id="date" name="date" required>
-            <input id="content" name="content"  placeholder="Text" required>
-            <input class="hide" type="file" id="image" name="image[]" multiple onchange="updateFileLabel(this)" required />
-            <label for="image">Bilder auswählen</label>
-            <script>
-                function updateFileLabel(input) {
-                    const label = input.nextElementSibling;
-                    const fileNames = Array.from(input.files).map(f => f.name).join(', ');
-                    label.textContent = fileNames || "Bilder auswählen";
-                }
-            </script>
-            <input class="button" type="submit" name=submit value="Speichern">
-        </form>
-    
-        <h1>Alte Über uns Einträge ansehen</h1>
-        
-        <div id="oldAboutUs"></div>
+        <!-- Adresse der Kirche bearbeiten -->
+        <section class="address-section">
+            <h1>Kirchenadresse</h1>
+            <form id="addressForm" class="mrg-btm">
+                <input type="text" id="street" name="street" placeholder="Straße" required>
+                <input type="text" id="city" name="city" placeholder="PLZ/Ort" required>
+                <input type="text" id="phone" name="phone" placeholder="Telefon" required>
+                <input type="email" id="email" name="email" placeholder="E-Mail" required>
+                <input type="text" id="iban" name="iban" placeholder="IBAN" required>
+                <input class="button" type="submit" value="Adresse speichern">
+            </form>
+        </section>
+
+        <div class="separator"></div>
+
+        <!-- Personen hinzufügen -->
+        <section class="person-section">
+            <h1>Person hinzufügen</h1>
+            <form id="personForm" class="mrg-btm" enctype="multipart/form-data">
+                <input type="text" id="personName" name="name" placeholder="Name" required>
+                <input type="text" id="personRole" name="role" placeholder="Position/Rolle" required>
+                <textarea id="personDescription" name="description" placeholder="Beschreibung" rows="4" required></textarea>
+                <input type="email" id="personEmail" name="email" placeholder="E-Mail" required>
+                <input type="text" id="personPhone" name="phone" placeholder="Telefon" required>
+                <input class="hide" type="file" id="personImage" name="image" accept="image/*" required />
+                <label for="personImage" id="personImageLabel">Bild auswählen</label>
+                <input class="button" type="submit" value="Person hinzufügen">
+            </form>
+        </section>
+
+        <div class="separator"></div>
+
+        <!-- Vorhandene Personen anzeigen und bearbeiten -->
+        <section class="persons-list-section">
+            <h1>Vorhandene Personen</h1>
+            <div id="personsList"></div>
+        </section>
     </main>
     <script src="./AboutUs/aboutus.js"></script>
 </body>

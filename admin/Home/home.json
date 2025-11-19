@@ -1,9 +1,9 @@
 {
-    "backgroundImage": "",
+    "backgroundImage": ".\/uploads\/home-background-1763545323.jpeg",
     "sections": [
         {
             "id": "about",
-            "title": "About Us",
+            "title": "Über uns",
             "text": "Die Orthodoxe Kirche Amstetten ist eine lebendige Gemeinschaft von Gläubigen, die sich dem Glauben und der Tradition der Orthodoxen Kirche verpflichtet fühlt.",
             "linkText": "Mehr erfahren",
             "linkUrl": ".\/AboutUs.html"

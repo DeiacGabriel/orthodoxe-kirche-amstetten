@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin-Home</title>
+    <link rel="icon" type="image/png" sizes="48x48" href="../_public_html/uploads/logo48-removebg-preview.png">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body onload="load();">
@@ -19,14 +20,26 @@
     <main>
         <h1>Home Sektionen bearbeiten</h1>
         
-        <!-- Hintergrundbild -->
-        <h2>Hintergrundbild</h2>
+        <!-- Hero-Section Hintergrund -->
+        <h2>Hero-Section Hintergrund (Startseite)</h2>
         <form id="backgroundForm" class="mrg-btm" enctype="multipart/form-data">
-            <label for="background-image">Hintergrundbild hochladen</label>
-            <input class="hide" type="file" id="background-image" name="backgroundImage" accept="image/*" onchange="updateBackgroundLabel(this)">
-            <label for="background-image" id="background-label">Bild auswählen</label>
-            <div id="current-background" style="margin-top: 10px; color: #666;"></div>
-            <button type="submit" class="button">Bild hochladen</button>
+            <div style="margin-bottom: 15px;">
+                <div id="background-preview" style="margin-bottom: 10px; display: none;">
+                    <p style="margin-bottom: 5px; font-weight: bold;">Aktueller Hero-Hintergrund:</p>
+                    <img id="background-preview-img" src="" alt="Hero-Hintergrund" style="max-width: 600px; max-height: 300px; border: 2px solid #ddd; border-radius: 5px; object-fit: cover;">
+                </div>
+                <div id="new-background-preview" style="margin-bottom: 10px; display: none;">
+                    <p style="margin-bottom: 5px; font-weight: bold;">Neuer Hintergrund (Vorschau):</p>
+                    <img id="new-background-preview-img" src="" alt="Neue Hintergrund-Vorschau" style="max-width: 600px; max-height: 300px; border: 2px solid #4CAF50; border-radius: 5px; object-fit: cover;">
+                </div>
+            </div>
+            
+            <input class="hide" type="file" id="background-image" name="backgroundImage" accept="image/*" onchange="previewNewImage(this)">
+            <label for="background-image" class="button" style="display: inline-block; cursor: pointer; margin-bottom: 10px;">
+                📁 Bild auswählen
+            </label>
+            <div id="background-filename" style="margin-top: 5px; margin-bottom: 10px; color: #666; font-style: italic;"></div>
+            <button type="submit" class="button" style="background-color: #4CAF50;">⬆️ Bild jetzt hochladen</button>
         </form>
         
         <!-- Über uns Sektion -->
@@ -84,15 +97,27 @@
         </form>
     </main>
     <script>
-        function updateBackgroundLabel(input) {
-            const label = document.getElementById('background-label');
-            if (input.files.length > 0) {
-                label.textContent = input.files[0].name;
+        function previewNewImage(input) {
+            const filenameDiv = document.getElementById('background-filename');
+            const previewDiv = document.getElementById('new-background-preview');
+            const previewImg = document.getElementById('new-background-preview-img');
+            
+            if (input.files && input.files[0]) {
+                filenameDiv.textContent = '✓ Ausgewählt: ' + input.files[0].name;
+                
+                // Zeige Vorschau des neuen Bildes
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImg.src = e.target.result;
+                    previewDiv.style.display = 'block';
+                };
+                reader.readAsDataURL(input.files[0]);
             } else {
-                label.textContent = "Bild auswählen";
+                filenameDiv.textContent = '';
+                previewDiv.style.display = 'none';
             }
         }
     </script>
-    <script src="./Home/home.js"></script>
+    <script src="./Home/home.js?v=5"></script>
 </body>
 </html>

@@ -52,7 +52,15 @@ function loadData() {
                 }
                 // Aktuelles Hintergrundbild anzeigen
                 if (data.backgroundImage) {
-                    document.getElementById('current-background').textContent = 'Aktuelles Bild: ' + data.backgroundImage;
+                    const previewDiv = document.getElementById('background-preview');
+                    const previewImg = document.getElementById('background-preview-img');
+                    if (previewDiv && previewImg) {
+                        // Konvertiere relativen Pfad zu absolutem Web-Pfad
+                        // data.backgroundImage ist z.B. "./uploads/home-background.jpg"
+                        const imagePath = data.backgroundImage.replace('./', '/');
+                        previewImg.src = imagePath;
+                        previewDiv.style.display = 'block';
+                    }
                 }
             } catch (e) {
                 console.error('JSON Parse Fehler:', e);
@@ -110,9 +118,28 @@ function uploadBackground() {
             const data = JSON.parse(text);
             if (data.success) {
                 alert('Hintergrundbild erfolgreich hochgeladen!');
-                document.getElementById('current-background').textContent = 'Aktuelles Bild: ' + data.filename;
+                
+                // Aktualisiere Vorschau mit neuem Bild
+                const previewDiv = document.getElementById('background-preview');
+                const previewImg = document.getElementById('background-preview-img');
+                if (previewDiv && previewImg) {
+                    // Da _public_html das DocumentRoot ist
+                    previewImg.src = '../uploads/' + data.filename;
+                    previewDiv.style.display = 'block';
+                }
+                
+                // Verstecke neue Bildvorschau (nur wenn Element existiert)
+                const newPreview = document.getElementById('new-background-preview');
+                if (newPreview) {
+                    newPreview.style.display = 'none';
+                }
+                
+                // Reset Formular
                 fileInput.value = '';
-                document.getElementById('background-label').textContent = 'Bild auswählen';
+                const filenameDiv = document.getElementById('background-filename');
+                if (filenameDiv) {
+                    filenameDiv.textContent = '';
+                }
             } else {
                 alert('Fehler: ' + data.message);
             }

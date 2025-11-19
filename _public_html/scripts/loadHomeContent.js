@@ -12,12 +12,15 @@ function loadHomeSections() {
                     updateSection(section);
                 });
             }
-            // Setze Hintergrundbild falls vorhanden
+            // Setze Hintergrund der Hero-Section falls vorhanden
             if (data.backgroundImage) {
-                document.body.style.backgroundImage = `url('${data.backgroundImage}')`;
-                document.body.style.backgroundSize = 'cover';
-                document.body.style.backgroundPosition = 'center';
-                document.body.style.backgroundAttachment = 'fixed';
+                const heroSection = document.querySelector('.hero-section');
+                if (heroSection) {
+                    heroSection.style.backgroundImage = `url('${data.backgroundImage}')`;
+                    heroSection.style.backgroundSize = 'cover';
+                    heroSection.style.backgroundPosition = 'center';
+                    heroSection.style.backgroundRepeat = 'no-repeat';
+                }
             }
         })
         .catch(error => {
