@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./scripts/public.css">
-    <link rel="stylesheet" type="text/css" href="./scripts/DEINE-SEITE.css">
-    <title>Seitentitel - Orthodoxe Kirche Amstetten</title>
+    <link rel="stylesheet" href="./scripts/public.css">
+    <link rel="stylesheet" href="./scripts/events.css">
+    <title>Events - Orthodoxe Kirche Amstetten</title>
     <link rel="icon" type="image/png" sizes="48x48" href="./uploads/logo48.png">
     
-    <meta name="description" content="Beschreibung deiner Seite">
-    <meta name="keywords" content="Keywords, für, deine, Seite">
 </head>
 <body>
     <header>
         <nav>
             <div class="nav-container">
                 <div class="header-img-group">
-                    <img src="./uploads/logo48.png"/>
+                    <img src="./uploads/wappen.png"/>
                     <div>Orthodoxe Kirche Amstetten</div>
                 </div>
                 <div class="big-nav">
@@ -24,65 +22,113 @@
                     <a class="text2 nav-item" href="./AboutUs.html">Über uns</a>
                     <a class="text2 nav-item" href="./Calendar.html">Kalender</a>
                     <a class="text2 nav-item" href="./Events.html">Events</a>
-                    <a class="text2 nav-item" href="">Galerie</a>
-                    <a target="_blank" class="text2 nav-item" href="https://de-de.facebook.com/bisericaortodoxaamstetten/">Facebook</a>
+                    <a class="text2 nav-item" href="./Galerie.html">Galerie</a>
+                    <a target="_blank" class="text2 nav-item" href="https://www.facebook.com/bisericaortodoxaamstetten/?locale=de_DE/">Facebook</a>
                 </div>
                 <img id="menu" src="./uploads/menu-button.png" onclick="changeMenu(event)"/>
             </div>
             <div id="open-menu" class="open-menu hide" onclick="changeMenu(event)">
-                <img id="close" class="hide close" src="./uploads/close.svg" onclick="changeMenu(event)"/>
-                <a class="text2 primary-item" href="./index.html">Home</a>
-                <a class="text2 primary-item" href="./AboutUs.html">Über uns</a>
-                <a class="text2 primary-item" href="./Calendar.html">Kalender</a>
-                <a class="text2 primary-item" href="./Events.html">Events</a>
-                <a class="text2 primary-item" href="./Gallery.html">Galerie</a>
-                <a target="_blank" class="text2 primary-item" href="https://de-de.facebook.com/bisericaortodoxaamstetten/">Facebook</a>
+                <img id="close" class="hide close" src="./uploads/menu-button.png" onclick="changeMenu(event)"/>
+
+                <a class="text2 primary-item" href="./index.html">Home</a>                
+                <a class="text2 primary-item" href="./AboutUs.html">Über uns</a>                
+                <a class="text2 primary-item" href="./Calendar.html">Kalender</a> 
+                <a class="text2 primary-item" href="./Events.html">Events</a>               
+                <a class="text2 primary-item" href="./Galerie.html">Galerie</a>                
+                <a target="_blank" class="text2 primary-item" href="https://www.facebook.com/bisericaortodoxaamstetten/?locale=de_DE/">Facebook</a>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- Hero-Sektion -->
         <section class="hero-section">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-text-content">
-                        <h1>Dein Haupttitel</h1>
-                        <p>Deine Beschreibung hier</p>
-                    </div>
-                    <img src="./uploads/wappen.png" alt="Bild"/>
+            <div class="hero-container">
+                <div class="headlines">
+                    <h1>Unsere Events</h1>
+                    <h1 class="centered-title">und Veranstaltungen</h1>
                 </div>
             </div>
-        </section>
-
-        <div class="separator"></div>
-
-        <!-- Erste Content-Sektion -->
-        <section class="normal-section">
-            <div class="normal-content">
-                <h2>Überschrift Sektion 1</h2>
-                <p>Dein Text hier...</p>
+            <div class="hero-image">
+                <img src="./uploads/wappen.png" alt="Kirche" />
             </div>
         </section>
-
+        
         <div class="separator"></div>
 
-        <!-- Zweite Content-Sektion -->
-        <section class="normal-section">
-            <div class="normal-content">
-                <h2>Überschrift Sektion 2</h2>
-                <p>Dein Text hier...</p>
-                <a href="./LinkZuAndererSeite.html">Mehr erfahren</a>
-            </div>
-        </section>
-
-        <div class="separator"></div>
-
-        <!-- Weitere Sektionen nach Bedarf -->
-        <section class="normal-section">
-            <div class="normal-content">
-                <h2>Überschrift Sektion 3</h2>
-                <p>Dein Text hier...</p>
+        <section class="events-section">
+            <div class="events-container">
+                <div class="event-item" onclick="toggleDetails(this)">
+                    <div class="event-header">
+                        <h2>Event 1</h2>
+                        <p class="event-date">datum</p>
+                    </div>
+                    <div class="event-preview">
+                        <p>Details zu Event 1</p>
+                    </div>
+                    <div class="event-details hidden">
+                        <p>Hier stehen die ausführlichen Details zum Event 1...</p>
+                    </div>
+                </div>
+                <div class="event-item" onclick="toggleDetails(this)">
+                    <div class="event-header">
+                        <h2>Event 2</h2>
+                        <p class="event-date">datum</p>
+                    </div>
+                    <div class="event-preview">
+                        <p>Details zu Event 2</p>
+                    </div>
+                    <div class="event-details hidden">
+                        <p>Hier stehen die ausführlichen Details zum Event 2...</p>
+                    </div>
+                </div>
+                <div class="event-item" onclick="toggleDetails(this)">
+                    <div class="event-header">
+                        <h2>Event 3</h2>
+                        <p class="event-date">datum</p>
+                    </div>
+                    <div class="event-preview">
+                        <p>Details zu Event 3</p>
+                    </div>
+                    <div class="event-details hidden">
+                        <p>Hier stehen die ausführlichen Details zum Event 3...</p>
+                    </div>
+                </div>
+                <div class="event-item" onclick="toggleDetails(this)">
+                    <div class="event-header">
+                        <h2>Event 4</h2>
+                        <p class="event-date">datum</p>
+                    </div>
+                    <div class="event-preview">
+                        <p>Details zu Event 4</p>
+                    </div>
+                    <div class="event-details hidden">
+                        <p>Info EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo EventInfo Event</p>
+                    </div>
+                </div>
+                <div class="event-item" onclick="toggleDetails(this)">
+                    <div class="event-header">
+                        <h2>Event 5</h2>
+                        <p class="event-date">datum</p>
+                    </div>
+                    <div class="event-preview">
+                        <p>Details zu Event 5</p>
+                    </div>
+                    <div class="event-details hidden">
+                        <p>Hier stehen die ausführlichen Details zum Event 5...</p>
+                    </div>
+                </div>
+                <div class="event-item" onclick="toggleDetails(this)">
+                    <div class="event-header">
+                        <h2>Event 6</h2>
+                        <p class="event-date">datum</p>
+                    </div>
+                    <div class="event-preview">
+                        <p>Details zu Event 6</p>
+                    </div>
+                    <div class="event-details hidden">
+                        <p>Hier stehen die ausführlichen Details zum Event 6...</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -93,29 +139,65 @@
             <h2>Orthodoxe Kirche Amstetten</h2>
         </div>
         <div class="separator"></div>
+
         <div class="links">
             <a class="marg-btm" href="./AboutUs.html#contact">Kontakt</a>
             <a class="marg-btm" href="./uploads/Impressum2025.docx" download="Impressum2025.docx">Haftungsausschluss herunterladen</a>
+
             <div>
                 <div class="footer-text">
                     Für den Inhalt verantwortlich:<br>
                     Orthodoxe Kirche Amstetten<br>
+                    Abschnitt- Amstetten/Stadt<br>
                     Pfarrer: Valentin Miloiu<br><br>
                     Anschrift:<br>
-                    Waidhofner Straße 2<br>
-                    3300 Amstetten<br><br>
-                    Kontakt:<br>
-                    Mail: XXXXX<br>
-                    Tel.: XXXXX<br><br>
+                    Straße: <span id="footerStreet">Waidhofner Straße 2</span><br>
+                    PLZ/Ort: <span id="footerCity"></span><br><br>
+                    Kontakt: Mail: <span id="footerEmail"></span><br>
+                    Tel.: <span id="footerPhone"></span><br><br>
                     Bankverbindung/Spendenkonto:<br>
-                    IBAN: AT XX XXXX XXXX XXXX XXXX
+                    IBAN: <span id="footerIban"></span>
                 </div>
             </div>
         </div>
     </footer>
+    <script src="./scripts/loadFooter.js"></script>
 
     <script>
     var x = 1;
+
+    function toggleDetails(eventItem) {
+        const details = eventItem.querySelector('.event-details');
+        const arrow = eventItem.querySelector('.arrow');
+        const container = document.querySelector('.events-container');
+        const allItems = container.querySelectorAll('.event-item');
+        
+        allItems.forEach(item => {
+            if (item !== eventItem) {
+                const itemDetails = item.querySelector('.event-details');
+                const itemArrow = item.querySelector('.arrow');
+                
+                if (itemDetails && !itemDetails.classList.contains('hidden')) {
+                    itemDetails.classList.add('hidden');
+                    if (itemArrow) {
+                        itemArrow.style.transform = 'rotate(0deg)';
+                    }
+                }
+            }
+        });
+        
+        if (details.classList.contains('hidden')) {
+            details.classList.remove('hidden');
+            if (arrow) {
+                arrow.style.transform = 'rotate(180deg)';
+            }
+        } else {
+            details.classList.add('hidden');
+            if (arrow) {
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+    }
 
     function changeMenu(event) {
         if (event) {
@@ -129,6 +211,7 @@
             x = 0;
             console.log("opened menu");
         } else {
+            
             if(window.innerWidth > 1000)
                 document.getElementById("menu").style.display = "none";
             else

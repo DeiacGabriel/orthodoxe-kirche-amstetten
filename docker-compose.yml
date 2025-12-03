@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: orthodoxe-kirche-web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./_public_html:/var/www/html/_public_html
+      - ./admin:/var/www/html/admin
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+    restart: "no"
+    # Setze Berechtigungen beim Start
+    command: >
+      bash -c "chown -R www-data:www-data /var/www/html/_public_html/uploads &&
+      chmod -R 777 /var/www/html/_public_html/uploads &&
+      chown -R www-data:www-data /var/www/html/admin/Home &&
+      chmod -R 777 /var/www/html/admin/Home &&
+      chown -R www-data:www-data /var/www/html/admin/AboutUs &&
+      chmod -R 777 /var/www/html/admin/AboutUs &&
+      apache2-foreground"

@@ -6,9 +6,9 @@
     <link rel="stylesheet" type="text/css" href="./scripts/public.css">
     <link rel="stylesheet" type="text/css" href="./scripts/home.css">
     <title>Startseite - Orthodoxe Kirche Amstetten</title>
-    <link rel="icon" type="image/png" sizes="48x48" href="./uploads/logo48.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="./uploads/wappen.png">
     
-    <script defer src="./scripts/loadContent.js"></script>
+    <script defer src="./scripts/loadHomeContent.js"></script>
     <meta name="description" content="Homepage der Orthodoxen Kirche Amstetten. Informieren Sie sich über unsere Gottesdienste, Veranstaltungen und Angebote.">
     <meta name="keywords" content="Orthodoxe Kirche, Amstetten, Gottesdienste, Veranstaltungen, Angebote">
     <meta property="og:title" content="Orthodoxe Kirche Amstetten - Startseite">
@@ -20,15 +20,15 @@
         <nav>
             <div class="nav-container">
                 <div class="header-img-group">
-                    <img src="./uploads/logo48.png"/>
+                    <img src="./uploads/wappen.png"/>
                     <div>Orthodoxe Kirche Amstetten</div>
                 </div>
                 <div class="big-nav">
                     <a class="text2 nav-item" href="./index.html">Home</a>
                     <a class="text2 nav-item" href="./AboutUs.html">Über uns</a>
                     <a class="text2 nav-item" href="./Calendar.html">Kalender</a>
-                    <a class="text2 nav-item" href="">Events</a>
-                    <a class="text2 nav-item" href="">Galerie</a>
+                    <a class="text2 nav-item" href="./Events.html">Events</a>
+                    <a class="text2 nav-item" href="./Galerie.html">Galerie</a>
                     <a target="_blank" class="text2 nav-item" href="https://de-de.facebook.com/bisericaortodoxaamstetten/">Facebook</a>
                 </div>
                 <img id="menu" src="./uploads/menu-button.png" onclick="changeMenu(event)"/>
@@ -39,12 +39,14 @@
                 <a class="text2 primary-item" href="./AboutUs.html">Über uns</a>
                 <a class="text2 primary-item" href="./Calendar.html">Kalender</a>
                 <a class="text2 primary-item" href="./Events.html">Events</a>
-                <a target="_blank" class="text2 primary-item" href="./Gallery.html">Galerie</a>
+                <a class="text2 primary-item" href="./Galerie.html">Galerie</a>
+
                 <a target="_blank" class="text2 primary-item" href="https://de-de.facebook.com/bisericaortodoxaamstetten/">Facebook</a>
             </div>
         </nav>
     </header>
     <main>
+        
         <!-- Hero-Sektion -->
         <section class="hero-section">
             <div class="hero-content">
@@ -100,19 +102,17 @@
                     Orthodoxe Kirche Amstetten<br>
                     Pfarrer: Valentin Miloiu<br><br>
                     Anschrift:<br>
-                    Waidhofner Straße 2<br>
-                    3300 Amstetten<br><br>
-                    Kontakt:<br>
-                    Mail: XXXXX<br>
-                    Tel.: XXXXX<br><br>
+                    Straße: <span id="footerStreet">Waidhofner Straße 2</span><br>
+                    PLZ/Ort: <span id="footerCity">3300 Amstetten</span><br><br>
+                    Kontakt: Mail: <span id="footerEmail"></span><br>
+                    Tel.: <span id="footerPhone"></span><br><br>
                     Bankverbindung/Spendenkonto:<br>
-                    IBAN: AT XX XXXX XXXX XXXX XXXX
+                    IBAN: <span id="footerIban"></span>
                 </div>
             </div>
         </div>
     </footer>
-    <script src="./scripts/menu.js"></script>
-    <script src="./scripts/switch.js"></script>
+    <script src="./scripts/loadFooter.js"></script>
     <script>
     var x = 1;
 

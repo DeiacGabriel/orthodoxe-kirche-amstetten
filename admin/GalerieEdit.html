@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Galerie</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="load();">
+    <header>
+        <nav>
+            <a href="./index.html">Home bearbeiten</a>
+            <a href="./AboutUsEdit.html">Über uns bearbeiten</a>
+            <a href="./CalendarEdit.html">Kalendar bearbeiten</a>
+            <a href="./EventsEdit.html">Events bearbeiten</a>
+            <a href="./GalerieEdit.html">Galerie bearbeiten</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Galerie</h1>
+        <form class="mrg-btm" action="./news/save.php" method="POST" enctype="multipart/form-data">
+            <input type="text" id="title" name="title" placeholder="Titel" required>
+            <input type="date" id="date" name="date" required>
+            <input id="content" name="content"  placeholder="Text" required>
+            <input class="hide" type="file" id="image" name="image[]" multiple onchange="updateFileLabel(this)" required />
+            <label for="image">Bilder auswählen</label>
+            <script>
+                function updateFileLabel(input) {
+                    const label = input.nextElementSibling;
+                    const fileNames = Array.from(input.files).map(f => f.name).join(', ');
+                    label.textContent = fileNames || "Bilder auswählen";
+                }
+            </script>
+            <input class="button" type="submit" name=submit value="Speichern">
+        </form>
+    
+        <h1>Alte Galerie Einträge ansehen</h1>
+        
+        <div id="oldGallery"></div>
+    </main>
+    <script src="./Galerie/galerie.js"></script>
+</body>
+</html>

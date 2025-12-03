@@ -21,8 +21,8 @@
                     <a class="text2 nav-item" href="./index.html">Home</a>
                     <a class="text2 nav-item" href="./AboutUs.html">Über uns</a>
                     <a class="text2 nav-item" href="./Calendar.html">Kalender</a>
-                    <a class="text2 nav-item" href="">Events</a>
-                    <a class="text2 nav-item" href="">Galerie</a>
+                    <a class="text2 nav-item" href="./Events.html">Events</a>
+                    <a class="text2 nav-item" href="./Galerie.html">Galerie</a>
                     <a target="_blank" class="text2 nav-item" href="https://www.facebook.com/bisericaortodoxaamstetten/?locale=de_DE/">Facebook</a>
                 </div>
                 <img id="menu" src="./uploads/menu-button.png" onclick="changeMenu(event)"/>
@@ -34,7 +34,7 @@
                 <a class="text2 primary-item" href="./AboutUs.html">Über uns</a>                
                 <a class="text2 primary-item" href="./Calendar.html">Kalender</a> 
                 <a class="text2 primary-item" href="./Events.html">Events</a>               
-                <a class="text2 primary-item" href="">Galerie</a>                
+                <a class="text2 primary-item" href="./Galerie.html">Galerie</a>                
                 <a target="_blank" class="text2 primary-item" href="https://m.facebook.com/feuerwehrgreinsfurth/">Facebook</a>
             </div>
         </nav>
@@ -42,14 +42,14 @@
 
     <main>
         <section class="hero-section">
-            <div class="hero-container">
-                <div class="headlines">
-                    <h1>Orthodoxe Kirche</h1>
-                    <h1 class="centered-title">Amstetten</h1>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-text-content">
+                        <h1 id="hero-title">Orthodoxen Kirche Amstetten</h1>
+                        <p id="hero-description">Willkommen auf der Offiziellen Website der Orthodoxen Kirche Amstetten.</p>
+                    </div>
+                    <img id="hero-image" src="./uploads/wappen.png" alt="Kirchenbild"/>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="./uploads/wappen.png" alt="Kirche" />
             </div>
         </section>
         
@@ -57,39 +57,8 @@
 
         <section class="members-section">
             <h2>Unsere Pfarre</h2>
-            <div class="members-container">
-                <div class="member-card">
-                    <div class="member-image">
-                        <img src="./uploads/person1.jpg" alt="Person 1" />
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Valentin Miloiu</h3>
-                        <p class="member-role">Pfarrer</p>
-                        <p class="member-description">
-                            Beschreibung der Aufgaben und Verantwortlichkeiten...
-                        </p>
-                        <div class="member-contact">
-                            <p>📧 email@beispiel.at</p>
-                            <p>📞 +43 123 456 789</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="member-card">
-                    <div class="member-image">
-                        <img src="./uploads/person1.jpg" alt="Person 1" />
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Name der Person</h3>
-                        <p class="member-role">Position/Rolle</p>
-                        <p class="member-description">
-                            Beschreibung der Aufgaben und Verantwortlichkeiten...
-                        </p>
-                        <div class="member-contact">
-                            <p>📧 email@beispiel.at</p>
-                            <p>📞 +43 123 456 789</p>
-                        </div>
-                    </div>                </div>
+            <div class="members-container" id="membersContainer">
+                <!-- Wird dynamisch geladen -->
             </div>
         </section>
 
@@ -110,7 +79,7 @@
         <section class="maps-section">
             <h2>Unser Standort</h2>
             <div class="maps-container">
-            <div>Dornacher Str. 17, 3300 Amstetten</div>
+            <div id="addressDisplay">Dornacher Str. 17, 3300 Amstetten</div>
                 <div class="location">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2663.013245132785!2d14.885798275097118!3d48.12926795174141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4772491c445547ff%3A0x618439793b80566e!2sParohia%20Ortodoxa%20%22Sf.%20Cuv.%20Paisie%20de%20la%20Neam%C8%9B%20%C8%99i%20Sf.%20Mc.%20Agata%22%20din%20Amstetten!5e0!3m2!1sde!2sat!4v1759299977923!5m2!1sde!2sat" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
@@ -129,18 +98,18 @@
             <a class="marg-btm" href="./uploads/Impressum2025.docx" download="Impressum2025.docx">Haftungsausschluss herunterladen</a>
 
             <div>
-                <div class="footer-text">
+                <div class="footer-text" id="footerText">
                     Für den Inhalt verantwortlich:<br>
                     Orthodoxe Kirche Amstetten<br>
                     Abschnitt- Amstetten/Stadt<br>
                     Pfarrer: Valentin Miloiu<br><br>
                     Anschrift:<br>
-                    Straße: Waidhofner Straße 2<br>
-                    PLZ/Ort: <br><br>
-                    Kontakt: Mail: <br>
-                    Tel.: <br><br>
+                    Straße: <span id="footerStreet">Waidhofner Straße 2</span><br>
+                    PLZ/Ort: <span id="footerCity"></span><br><br>
+                    Kontakt: Mail: <span id="footerEmail"></span><br>
+                    Tel.: <span id="footerPhone"></span><br><br>
                     Bankverbindung/Spendenkonto:<br>
-                    IBAN: 
+                    IBAN: <span id="footerIban"></span>
                 </div>
             </div>
         </div>
@@ -178,6 +147,59 @@
             changeMenu();
         }
     });
+
+    // Personen und Adresse laden
+    async function loadAboutUsData() {
+        try {
+            // Personen laden
+            const personsResponse = await fetch('./api/getPersons.php');
+            const persons = await personsResponse.json();
+            
+            const membersContainer = document.getElementById('membersContainer');
+            membersContainer.innerHTML = '';
+            
+            persons.forEach(person => {
+                const memberCard = document.createElement('div');
+                memberCard.className = 'member-card';
+                memberCard.innerHTML = `
+                    <div class="member-image">
+                        <img src="${person.image}" alt="${person.name}" />
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">${person.name}</h3>
+                        <p class="member-role">${person.role}</p>
+                        <p class="member-description">
+                            ${person.description}
+                        </p>
+                        <div class="member-contact">
+                            <p>📧 ${person.email}</p>
+                            <p>📞 ${person.phone}</p>
+                        </div>
+                    </div>
+                `;
+                membersContainer.appendChild(memberCard);
+            });
+            
+            // Adresse laden
+            const addressResponse = await fetch('./api/getAddress.php');
+            const address = await addressResponse.json();
+            
+            if (address.street && address.city) {
+                document.getElementById('addressDisplay').textContent = `${address.street}, ${address.city}`;
+                document.getElementById('footerStreet').textContent = address.street;
+                document.getElementById('footerCity').textContent = address.city;
+                document.getElementById('footerEmail').textContent = address.email;
+                document.getElementById('footerPhone').textContent = address.phone;
+                document.getElementById('footerIban').textContent = address.iban;
+            }
+        } catch (error) {
+            console.error('Fehler beim Laden der Daten:', error);
+        }
+    }
+
+    // Beim Laden der Seite
+    document.addEventListener('DOMContentLoaded', loadAboutUsData);
     </script>
+    <script src="./scripts/loadFooter.js?v=2"></script>
 </body>
 </html>

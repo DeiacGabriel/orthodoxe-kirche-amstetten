@@ -1,0 +1,63 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Über uns</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" sizes="48x48" href="../_public_html/uploads/logo48-removebg-preview.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="./index.html">Home bearbeiten</a>
+            <a href="./AboutUsEdit.html">Über uns bearbeiten</a>
+            <a href="./CalendarEdit.html">Kalendar bearbeiten</a>
+            <a href="./EventsEdit.html">Events bearbeiten</a>
+            <a href="./GalerieEdit.html">Galerie bearbeiten</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Adresse der Kirche bearbeiten -->
+        <section class="address-section">
+            <h1>Kirchenadresse</h1>
+            <form id="addressForm" class="mrg-btm">
+                <input type="text" id="street" name="street" placeholder="Straße" required>
+                <input type="text" id="city" name="city" placeholder="PLZ/Ort" required>
+                <input type="text" id="phone" name="phone" placeholder="Telefon" required>
+                <input type="email" id="email" name="email" placeholder="E-Mail" required>
+                <input type="text" id="iban" name="iban" placeholder="IBAN" required>
+                <input class="button" type="submit" value="Adresse speichern">
+            </form>
+        </section>
+
+        <div class="separator"></div>
+
+        <!-- Personen hinzufügen -->
+        <section class="person-section">
+            <h1>Person hinzufügen</h1>
+            <form id="personForm" class="mrg-btm" enctype="multipart/form-data">
+                <input type="text" id="personName" name="name" placeholder="Name" required>
+                <input type="text" id="personRole" name="role" placeholder="Position/Rolle" required>
+                <textarea id="personDescription" name="description" placeholder="Beschreibung" rows="4" required></textarea>
+                <input type="email" id="personEmail" name="email" placeholder="E-Mail" required>
+                <input type="text" id="personPhone" name="phone" placeholder="Telefon" required>
+                <input class="hide" type="file" id="personImage" name="image" accept="image/*" required />
+                <label for="personImage" id="personImageLabel">Bild auswählen</label>
+                <input class="button" type="submit" value="Person hinzufügen">
+            </form>
+        </section>
+
+        <div class="separator"></div>
+
+        <!-- Vorhandene Personen anzeigen und bearbeiten -->
+        <section class="persons-list-section">
+            <h1>Vorhandene Personen</h1>
+            <div id="personsList"></div>
+        </section>
+    </main>
+    <script src="./AboutUs/aboutus.js"></script>
+</body>
+</html>

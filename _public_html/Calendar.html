@@ -21,8 +21,8 @@
                     <a class="text2 nav-item" href="./index.html">Home</a>
                     <a class="text2 nav-item" href="./AboutUs.html">Über uns</a>
                     <a class="text2 nav-item" href="./Calendar.html">Kalender</a>
-                    <a class="text2 nav-item" href="">Events</a>
-                    <a class="text2 nav-item" href="">Galerie</a>
+                    <a class="text2 nav-item" href="./Events.html">Events</a>
+                    <a class="text2 nav-item" href="./Galerie.html">Galerie</a>
                     <a target="_blank" class="text2 nav-item" href="https://www.facebook.com/bisericaortodoxaamstetten/?locale=de_DE/">Facebook</a>
                 </div>
                 <img id="menu" src="./uploads/menu-button.png" onclick="changeMenu(event)"/>
@@ -32,8 +32,8 @@
                 <a class="text2 primary-item" href="./index.html">Home</a>
                 <a class="text2 primary-item" href="../AboutUs.html">Über uns</a>
                 <a class="text2 primary-item" href="./Calendar.html">Kalender</a>
-                <a class="text2 primary-item" href="">Events</a>
-                <a class="text2 primary-item" href="">Galerie</a>
+                <a class="text2 primary-item" href="./Events.html">Events</a>
+                <a class="text2 primary-item" href="./Galerie.html">Galerie</a>
                 <a target="_blank" class="text2 primary-item" href="https://www.facebook.com/bisericaortodoxaamstetten/?locale=de_DE/">Facebook</a>
             </div>
         </nav>
@@ -90,15 +90,26 @@
         </div>
         <div class="separator"></div>
         <div class="links">
-            <div class="footer-text">
-                Orthodoxer Kalender nach rumänischer Tradition<br>
-                Alle Daten nach julianischem Kalender<br><br>
-                Für Fragen zu Gottesdiensten kontaktieren Sie uns:<br>
-                Tel.: +43 123 456 789<br>
-                Email: kontakt@orthodoxe-amstetten.at
+            <a class="marg-btm" href="./AboutUs.html#contact">Kontakt</a>
+            <a class="marg-btm" href="./uploads/Impressum2025.docx" download="Impressum2025.docx">Haftungsausschluss herunterladen</a>
+            <div>
+                <div class="footer-text">
+                    Für den Inhalt verantwortlich:<br>
+                    Orthodoxe Kirche Amstetten<br>
+                    Abschnitt- Amstetten/Stadt<br>
+                    Pfarrer: Valentin Miloiu<br><br>
+                    Anschrift:<br>
+                    Straße: <span id="footerStreet">Waidhofner Straße 2</span><br>
+                    PLZ/Ort: <span id="footerCity"></span><br><br>
+                    Kontakt: Mail: <span id="footerEmail"></span><br>
+                    Tel.: <span id="footerPhone"></span><br><br>
+                    Bankverbindung/Spendenkonto:<br>
+                    IBAN: <span id="footerIban"></span>
+                </div>
             </div>
         </div>
     </footer>
+    <script src="./scripts/loadFooter.js"></script>
 
     <script src="./scripts/calendar.js"></script>
     <script>

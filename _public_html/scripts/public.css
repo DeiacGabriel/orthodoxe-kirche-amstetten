@@ -187,8 +187,10 @@ h1, h2, h3, .text, img{
 }
 h1{
     font-size: 3.375em;
-    font-weight: normal;
+    font-weight: 700;
     font-variant: all-petite-caps;
+    color:white;
+    line-height: 80%;
 }
 h2{
     font-size: 2em;
@@ -331,6 +333,7 @@ header nav img{
 main{
     width: 80%;
     margin: 0 auto;
+    padding-top: 60px;
 }
 
 .hero-section{
